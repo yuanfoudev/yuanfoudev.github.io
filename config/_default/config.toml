@@ -6,13 +6,12 @@ theme = "paper"
 
 [params]
   color = 'linen'
-  twitter = 'nanxiaobei'
-  github = 'nanxiaobei'
-  instagram = 'nan.xiaobei'
+  twitter = 'yuanfoudev'
+  github = 'yuanfoudev'
 
-  avatar = 'nanxiaobei@gmail.com'
-  name = 'Lee'
-  bio = 'Discover fresh context'
+  avatar = 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd6e23f4c-91f8-4665-8e2e-15eb24476d61%2Flogo.png?table=block&id=991a6272-a390-4ec7-8b93-1feb08e5054d&spaceId=6f061d15-8f2e-42d0-a148-068fb412b305&width=600&userId=5191ad45-3310-4476-a47f-6c90dded5c8a&cache=v2'
+  name = '元否'
+  bio = '未独立开发者|INTJ-A'
 # ------------------------------
 
 # needed to  render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)
@@ -26,12 +25,12 @@ theme = "paper"
   [[menu.main]]
     identifier = "about"
     name = "About"
-    url = "/about/"
+    url = "https://dearlaywer.notion.site/About-8778dacf175744ebbf826571bebe5db3?pvs=4"
     weight = 10
   [[menu.main]]
     identifier = "contact"
     name = "Contact"
-    url = "/contact/"
+    url = "https://dearlaywer.notion.site/Contact-f8a45b3911c344feab004f027de13279?pvs=4"
     weight = 10
 
 [taxonomies]
