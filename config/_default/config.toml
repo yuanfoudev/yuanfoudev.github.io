@@ -1,3 +1,4 @@
+# ------------------------------
 baseURL = "https://yuanfoudev.github.io/"
 languageCode = "zh-CN"
 title = "元否的研究室"
@@ -14,12 +15,11 @@ theme = "paper"
   name = '元否'
   bio = '未独立开发者|INTJ-A'
 
-  favicon = '/images/avatar.png'
+  favicon = '/static/image'
 
   # misc
-  disableHLJS = true                        # disable highlight.js
-  monoDarkIcon = true                       # show monochrome dark mode icon
-  gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
+  disableHLJS = true
+  gravatarCdn = 'https://cdn.v2ex.com/gravatar/'         # e.g. 'https://cdn.v2ex.com/gravatar/'
   graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
   math = true                               # enable KaTex math typesetting globally
 # ------------------------------
