@@ -30,29 +30,22 @@ theme = "paper"
 
 
 # 正确配置 markdown 解析设置，防止原始 html标签 被过滤。
-  [highlight]
-    codeFences = true
-    guessSyntax = true
-    lineNos = true
-    lineNumbersInTable = true
-    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
-    # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
-    noClasses = false
   # Goldmark is from Hugo 0.60 the default library used for Markdown
   # Goldmark 是 Hugo 0.60 以来的默认 Markdown 解析库
-  [goldmark]
-    [goldmark.extensions]
-      definitionList = true
-      footnote = true
-      linkify = true
-      strikethrough = true
-      table = true
-      taskList = true
-      typographer = true
-    [goldmark.renderer]
-      # whether to use HTML tags directly in the document
-      # 是否在文档中直接使用 HTML 标签
-      unsafe = true
+  [markup]
+    [goldmark]
+      [goldmark.extensions]
+        definitionList = true
+        footnote = true
+        linkify = true
+        strikethrough = true
+        table = true
+        taskList = true
+        typographer = true
+      [goldmark.renderer]
+        # whether to use HTML tags directly in the document
+        # 是否在文档中直接使用 HTML 标签
+        unsafe = true
   # Table Of Contents settings
   # 目录设置
   [tableOfContents]
