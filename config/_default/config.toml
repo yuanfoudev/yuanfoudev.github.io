@@ -3,7 +3,7 @@
 baseURL = "https://yuanfoudev.github.io/"
 author = "yuanfou"
 languageCode = "en"
-DefaultContentLanguage = "zh-CN"
+DefaultContentLanguage = "zh"
 paginate = 20
 ignoreErrors = ["error-remote-getjson"]
 enableInlineShortcodes = true
