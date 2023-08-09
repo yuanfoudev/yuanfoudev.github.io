@@ -32,9 +32,9 @@ theme = "paper"
 # 正确配置 markdown 解析设置，防止原始 html标签 被过滤。
   # Goldmark is from Hugo 0.60 the default library used for Markdown
   # Goldmark 是 Hugo 0.60 以来的默认 Markdown 解析库
-  [markup]
-    [goldmark]
-      [goldmark.extensions]
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
         definitionList = true
         footnote = true
         linkify = true
@@ -42,18 +42,10 @@ theme = "paper"
         table = true
         taskList = true
         typographer = true
-      [goldmark.renderer]
+    [markup.goldmark.renderer]
         # whether to use HTML tags directly in the document
         # 是否在文档中直接使用 HTML 标签
         unsafe = true
-  # Table Of Contents settings
-  # 目录设置
-  [tableOfContents]
-    startLevel = 2
-    endLevel = 6
-
-
-
 # ------------------------------
 
 # 配置网站菜单
