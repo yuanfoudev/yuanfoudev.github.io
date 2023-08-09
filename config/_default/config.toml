@@ -37,9 +37,9 @@ theme = "paper"
     url = "/contact/"
     weight = 10
   [[menu.main]]
-    identifier = "test"
-    name = "Test"
-    url = "/content/test.md"
+    identifier = "friends"
+    name = "Friends"
+    url = "/friends/"
     weight = 10
 
 
