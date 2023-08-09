@@ -7,6 +7,7 @@ import {
 } from "@notionhq/client";
 import {
   EquationBlockObjectResponse,
+  TextBlockObjectResponse, //添加富文本的导入
   GetPageResponse,
   PageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
@@ -18,7 +19,7 @@ import { getPageTitle, getCoverLink, getFileName } from "./helpers";
 import katex from "katex";
 import { MdBlock } from "@pclouddev/notion-to-markdown/build/types";
 //
-import { TextBlockObjectResponse } from "@notionhq/client/build/src/api-types";
+
 
 import path from "path";
 import { getContentFile } from "./file";
