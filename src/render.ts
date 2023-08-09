@@ -17,10 +17,14 @@ import { DatabaseMount, loadConfig, PageMount } from "./config";
 import { getPageTitle, getCoverLink, getFileName } from "./helpers";
 import katex from "katex";
 import { MdBlock } from "@pclouddev/notion-to-markdown/build/types";
+//
+import { TextBlockObjectResponse } from "@notionhq/client/build/src/api-types";
+
 import path from "path";
 import { getContentFile } from "./file";
 require("katex/contrib/mhchem"); // modify katex module
 
+//找到过期时间
 function getExpiryTime(blocks: MdBlock[], expiry_time: string | undefined = undefined): string | undefined {
   for (const block of blocks) {
     if (block.expiry_time !== undefined) {
@@ -38,6 +42,9 @@ function getExpiryTime(blocks: MdBlock[], expiry_time: string | undefined = unde
   return expiry_time
 }
 
+
+
+//核心处理notion 数学公式内容变更为 markdown可用的公式
 export async function renderPage(page: PageObjectResponse, notion: Client) {
 
   // load formatter config
@@ -76,6 +83,27 @@ export async function renderPage(page: PageObjectResponse, notion: Client) {
       break;
   }
 
+    //处理富文本
+    n2m.setCustomTransformer("text", async (block) => {
+      const { text } = block as TextBlockObjectResponse;
+      let markdown = "";
+  
+      for (const fragment of text) {
+        if (fragment.text !== undefined) {
+          markdown += fragment.text.content;
+        } else if (fragment.link !== undefined) {
+          const { url } = fragment.link;
+          const content = fragment.plain_text;
+  
+          markdown += `[${content}](${url})`;
+        }
+      }
+  
+      return markdown;
+    });
+  
+
+//生成页面标题和 markdown 的前置元数据
   let nearest_expiry_time: string | null = null
   const mdblocks = await n2m.pageToMarkdown(page.id);
   const page_expiry_time = getExpiryTime(mdblocks)
@@ -93,7 +121,8 @@ export async function renderPage(page: PageObjectResponse, notion: Client) {
     draft: false,
   };
 
-  // set featuredImage
+
+  // set featuredImage 获取封面图cover 的链接并存储
   const featuredImageLink = await getCoverLink(page.id, notion);
   if (featuredImageLink) {
     const { link, expiry_time } = featuredImageLink;
@@ -108,7 +137,7 @@ export async function renderPage(page: PageObjectResponse, notion: Client) {
     }
   } 
 
-  // map page properties to front matter
+  // map page properties to front matter 获取页面的其他属性并存储
   for (const property in page.properties) {
     const id = page.properties[property].id;
     const response = await notion.pages.properties.retrieve({
