@@ -1,6 +1,6 @@
 # ------------------------------
 baseURL = "https://yuanfoudev.github.io/"
-languageCode = "zh"
+languageCode = "zh-CN"
 title = "元否的研究室"
 theme = "paper"
 
