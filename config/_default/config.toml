@@ -1,30 +1,34 @@
 # ------------------------------
 
 baseURL = "https://yuanfoudev.github.io/"
-author = "yuanfou"
 languageCode = "en"
-DefaultContentLanguage = "zh"
-paginate = 20
-ignoreErrors = ["error-remote-getjson"]
-enableInlineShortcodes = true
+
+
+
+#清author = "yuanfou"
+#清DefaultContentLanguage = "zh"
+#清paginate = 20
+#清ignoreErrors = ["error-remote-getjson"]
+#清enableInlineShortcodes = true
 
 # ------------------------------
 
+
 title = "元否的研究室"
-theme = "paper"
+theme = "ananke"
 
 
-[params]
-  color = 'linen'
-  twitter = 'yuanfoudev'
+#清[params]
+#清  color = 'linen'
+#清  twitter = 'yuanfoudev'
   
   #github = 'yuanfoudev'
   
-  rss = true
+#清  rss = true
 
-  avatar = 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd6e23f4c-91f8-4665-8e2e-15eb24476d61%2Flogo.png?table=block&id=991a6272-a390-4ec7-8b93-1feb08e5054d&spaceId=6f061d15-8f2e-42d0-a148-068fb412b305&width=600&userId=5191ad45-3310-4476-a47f-6c90dded5c8a&cache=v2'
-  name = '元否'
-  bio = '未独立开发者|INTJ-A'
+#清  avatar = 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd6e23f4c-91f8-4665-8e2e-15eb24476d61%2Flogo.png?table=block&id=991a6272-a390-4ec7-8b93-1feb08e5054d&spaceId=6f061d15-8f2e-42d0-a148-068fb412b305&width=600&userId=5191ad45-3310-4476-a47f-6c90dded5c8a&cache=v2'
+#清  name = '元否'
+#清  bio = '未独立开发者|INTJ-A'
 
 # ------------------------------
 
@@ -32,20 +36,20 @@ theme = "paper"
 # 正确配置 markdown 解析设置，防止原始 html标签 被过滤。
   # Goldmark is from Hugo 0.60 the default library used for Markdown
   # Goldmark 是 Hugo 0.60 以来的默认 Markdown 解析库
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-        definitionList = true
-        footnote = true
-        linkify = true
-        strikethrough = true
-        table = true
-        taskList = true
-        typographer = true
-    [markup.goldmark.renderer]
+#清[markup]
+#清  [markup.goldmark]
+#清    [markup.goldmark.extensions]
+#清        definitionList = true
+#清        footnote = true
+#清        linkify = true
+#清        strikethrough = true
+#清        table = true
+#清        taskList = true
+#清        typographer = true
+#清    [markup.goldmark.renderer]
         # whether to use HTML tags directly in the document
         # 是否在文档中直接使用 HTML 标签
-        unsafe = true
+#清        unsafe = true
 # ------------------------------
 
 # 配置网站菜单
@@ -75,6 +79,6 @@ series = "series"
 
 
 # misc
-  disableHLJS = true
-  #gravatarCdn = 'https://cdn.v2ex.com/gravatar/'         # e.g. 'https://cdn.v2ex.com/gravatar/'
-  math = true                               # enable KaTex math typesetting globally
+#清disableHLJS = true
+#gravatarCdn = 'https://cdn.v2ex.com/gravatar/'         # e.g. 'https://cdn.v2ex.com/gravatar/'
+#清math = true                               # enable KaTex math typesetting globally
