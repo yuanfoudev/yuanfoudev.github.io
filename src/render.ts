@@ -7,7 +7,7 @@ import {
 } from "@notionhq/client";
 import {
   EquationBlockObjectResponse,
-  TextBlockObjectResponse, //添加富文本的导入
+  BlockObjectResponse, //添加富文本的导入
   GetPageResponse,
   PageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
@@ -86,7 +86,7 @@ export async function renderPage(page: PageObjectResponse, notion: Client) {
 
     //处理富文本
     n2m.setCustomTransformer("text", async (block) => {
-      const { text } = block as TextBlockObjectResponse;
+      const { text } = block as BlockObjectResponse;
       let markdown = "";
   
       for (const fragment of text) {
