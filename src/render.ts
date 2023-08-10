@@ -16,7 +16,7 @@ import {
 
 //导入新模组 notion-to-md
 import {NotionToMarkdown} from "notion-to-md";
-
+import{ MdBlock } from "notion-to-md/build/types";
 
 import YAML from "yaml";
 import { sh } from "./sh";
