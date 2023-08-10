@@ -10,7 +10,7 @@ import {
   GetPageResponse,
   PageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
- import { NotionToMarkdown } from "@pclouddev/notion-to-markdown";
+ import { NotionToMarkdown } from "notion-to-md";  //20230810替换 notion-to-md 包
  import { MdBlock } from "@pclouddev/notion-to-markdown/build/types";
 
 
@@ -56,6 +56,7 @@ export async function renderPage(page: PageObjectResponse, notion: Client) {
 
   const n2m = new NotionToMarkdown({ notionClient: notion });
   
+
   let frontInjectString = ''
 
   switch (formatterConfig.equation.style) {
@@ -93,7 +94,15 @@ export async function renderPage(page: PageObjectResponse, notion: Client) {
   const mdblocks = await n2m.pageToMarkdown(page.id);
   const page_expiry_time = getExpiryTime(mdblocks)
   if (page_expiry_time) nearest_expiry_time = page_expiry_time
-  const mdString = n2m.toMarkdownString(mdblocks);
+ //const mdString = n2m.toMarkdownString(mdblocks);
+
+ // 20230810改装了mdString的组成
+ const markdownContentArray = mdblocks.map((markdownObj) => {
+  return markdownObj.parent;
+});
+const mdString = markdownContentArray.join("\n\n");
+
+
   page.properties.Name;
   const title = getPageTitle(page);
   const frontMatter: Record<
