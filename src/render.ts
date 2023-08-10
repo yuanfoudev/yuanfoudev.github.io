@@ -12,11 +12,11 @@ import {
 } from "@notionhq/client/build/src/api-endpoints";
 //原方法 import { NotionToMarkdown } from "@pclouddev/notion-to-markdown";
 //原方法 import { MdBlock } from "@pclouddev/notion-to-markdown/build/types";
-//
+
 
 //导入新模组 notion-to-md
 import {NotionToMarkdown} from "notion-to-md";
-import{ MdBlock } from "notion-to-md/build/types";
+import{ MdBlock } from "@pclouddev/notion-to-markdown/build/types";
 
 import YAML from "yaml";
 import { sh } from "./sh";
