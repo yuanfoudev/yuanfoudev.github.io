@@ -1,6 +1,6 @@
 # ------------------------------
 
-baseURL = "https://www.happyfou.com"
+baseURL = "https://happyfou.com"
 languageCode = "en"
 
 author = "yuanfou"
