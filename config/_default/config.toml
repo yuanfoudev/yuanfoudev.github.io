@@ -1,6 +1,6 @@
 # ------------------------------
 
-baseURL = "https://yuanfoudev.github.io/"
+baseURL = "https://yuanfoudev.github.io"
 languageCode = "en"
 
 author = "yuanfou"
