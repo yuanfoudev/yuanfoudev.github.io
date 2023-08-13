@@ -94,8 +94,8 @@ math = true
     name = "Friends"
     url = "/friends/"
     weight = 10
-  [[menu.main]]
-    identifier = "archives"
-    name = "Archives"
-    url = "/archives/"
-    weight = 10
+#  [[menu.main]]
+#    identifier = "archives"
+#    name = "Archives"
+#    url = "/archives/"
+#    weight = 10
