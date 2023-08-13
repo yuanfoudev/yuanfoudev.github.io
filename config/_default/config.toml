@@ -90,12 +90,12 @@ math = true
     url = "/about/"
     weight = 10
   [[menu.main]]
-    identifier = "contact"
-    name = "Contact"
-    url = "/contact/"
-    weight = 10
-  [[menu.main]]
     identifier = "friends"
     name = "Friends"
     url = "/friends/"
+    weight = 10
+  [[menu.main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/archives/"
     weight = 10
