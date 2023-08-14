@@ -53,10 +53,14 @@
     >Featured</span
   >
   {{ end }}
+  
   <h2 class="!my-0 pb-1 font-bold !leading-none">{{ .Title }}</h2>
 
-  <!--20230807添加 Article Summary -->
-  <p class="small">{{ .Params.summarys }}</p>
+  <!--20230814 为文章添加预览图片和摘要Article Summary -->
+  <div class="flex summarysimg">
+      <p class="small">{{ .Params.summarys }}</p>
+  </div>
+
 
   <time class="text-sm antialiased opacity-60"
     >{{ .Date | time.Format ":date_medium" }}</time
