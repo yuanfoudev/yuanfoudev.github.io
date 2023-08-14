@@ -33,12 +33,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-       #修改为 Render.com部署
-       RENDER_WEBHOOK_URL: ${{ secrets.RENDER_WEBHOOK_URL }}
+      RENDER_WEBHOOK_URL: ${{ secrets.RENDER_WEBHOOK_URL }}
     steps:
-       - name: Trigger Render build
-         if: startsWith(env.RENDER_WEBHOOK_URL, 'https://api.render.com/deploy/srv-cjc8ot45kgrc739rbf7g?key=BCiyXhBAZRc') && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
-         run: curl -X POST ${{ secrets.RENDER_WEBHOOK_URL }}
+      - name: Trigger Render build
+        if: startsWith(env.RENDER_WEBHOOK_URL, 'https://api.render.com/deploy/srv-cjc8ot45kgrc739rbf7g?key=BCiyXhBAZRc') && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+        run: curl -X POST ${{ secrets.RENDER_WEBHOOK_URL }}
+
    # 原CLOUDFLARE部署
    #   CLOUDFLARE_PAGES_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
 
