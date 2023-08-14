@@ -35,10 +35,16 @@ jobs:
     env:
       CLOUDFLARE_PAGES_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
 
+   # steps:
+   #   - name: Trigger Cloudflare Pages build
+   #     if: startsWith(env.CLOUDFLARE_PAGES_DEPLOY_HOOK, 'https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/') && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+   #     run: curl -X POST ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
+   
+   #修改为 Render.com部署
     steps:
-      - name: Trigger Cloudflare Pages build
-        if: startsWith(env.CLOUDFLARE_PAGES_DEPLOY_HOOK, 'https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/') && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
-        run: curl -X POST ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
+       - name: Trigger Render build
+         if: startsWith(env.RENDER_WEBHOOK_URL, 'https://api.render.com/deploy/srv-cjc8ot45kgrc739rbf7g?key=BCiyXhBAZRc') && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+         run: curl -X POST ${{ secrets.RENDER_WEBHOOK_URL }}
 
 
       - uses: actions/checkout@v3
