@@ -2,6 +2,8 @@
 
 <article>
   <header class="mb-16">
+    <!--20230814 插入顶部图片-->
+    <img src="{{if .Params.featuredImage }}" >
     <h1 class="!my-0 pb-2.5">{{ .Title }}</h1>
 
     {{ if ne .Type "page" }}
@@ -9,11 +11,11 @@
       {{ if .Date }}
       <time>{{ .Date | time.Format ":date_medium" }}</time>
       {{ end }}<!---->
-      {{ $single_author := or .Params.Author site.Author.name }}
+      {{ $authors := or .Params.Author site.Author.name }}
       <!---->
-      {{ if $single_author }}
+      {{ if $authors }}
       <span class="mx-1">&middot;</span>
-      <span>{{ $single_author }}</span>
+      <span>{{ $authors }}</span>
       {{ end }}
     </div>
     {{ end }}
