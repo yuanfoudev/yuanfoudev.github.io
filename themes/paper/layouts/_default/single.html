@@ -2,26 +2,30 @@
 
 <article>
   <header class="mb-16">
-    <!--20230814 插入顶部图片-->
-    <!--20230814 插入顶部图片-->
-    {{ if .Params.featuredImage }}
-    <img src="{{ .Params.featuredImage }}">
-    {{ end }}
+   
     <h1 class="!my-0 pb-2.5">{{ .Title }}</h1>
 
     {{ if ne .Type "page" }}
     <div class="text-sm antialiased opacity-60">
+      <!--20230814 插入文章创建时间-->
       {{ if .Date }}
       <time>{{ .Date | time.Format ":date_medium" }}</time>
-      {{ end }}<!---->
-      {{ $authors := or .Params.Author site.Author.name }}
-      <!---->
-      {{ if $authors }}
-      <span class="mx-1">&middot;</span>
-      <span>{{ $authors }}</span>
       {{ end }}
+      
+      <!--20230814 插入作者信息-->
+      {{ if .Params.authors }}
+      <span class="mx-1">&middot;</span>
+      <span>{{ .Params.authors }}</span>
+      {{ end }}
+
+      <!--20230814 插入文章图片-->
+     {{ if .Params.featuredImage }}
+     <img src="{{ .Params.featuredImage }}">
+     {{ end }}
+
     </div>
     {{ end }}
+     
   </header>
 
   <section>{{ .Content }}</section>

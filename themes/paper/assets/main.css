@@ -547,6 +547,11 @@ body {
   --tw-backdrop-sepia:  ;
 }
 
+/*20230815添加 list 缩略图类*/
+.summarysimg{
+  justify-content:space-between;
+}
+
 .prose {
   color: var(--tw-prose-body);
   max-width: 65ch;
