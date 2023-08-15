@@ -53,15 +53,17 @@
     >Featured</span
   >
   {{ end }}
-  
-  <h2 class="!my-0 pb-1 font-bold !leading-none">{{ .Title }}</h2>
-  <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
-  <!--20230814 为文章添加预览图片和摘要Article Summary -->
-  <div class="summarysimg">
-      <p class="small">{{ .Params.summarys }}</p>
-      {{ if .Params.featuredImage }}
-      <img class="rightimg" src="{{ .Params.featuredImage }}">
-      {{ end }}
+  <div class="summarysctnbox">
+    <div class="ctntext">
+      <h2 class="!my-0 pb-1 font-bold !leading-none">{{ .Title }}</h2>
+      <p  class="small summaryspra">{{ .Params.summarys }}</p>
+    </div>
+    <!--20230814 为文章添加预览图片和摘要Article Summary -->
+    {{ if .Params.featuredImage }}
+    <img class="rightimg" src="{{ .Params.featuredImage }}">
+    {{ end }}
+ 
+      <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
   </div>
 
 
