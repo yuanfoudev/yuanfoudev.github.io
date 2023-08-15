@@ -62,15 +62,9 @@
     {{ if .Params.featuredImage }}
     <img class="rightimg" src="{{ .Params.featuredImage }}">
     {{ end }}
- 
-      <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
   </div>
-
-
-  <time class="text-sm antialiased opacity-60"
-    >{{ .Date | time.Format ":date_medium" }}</time
-  >
-  
+  <time class="text-sm antialiased opacity-60" >{{ .Date | time.Format ":date_medium" }}</time>
+  <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
 </section>
 {{ end }}
 

@@ -3,7 +3,7 @@
 /*20230815添加 维护list，添加缩略图类*/
 .summarysctnbox{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start; 
     gap: 24px;
   }
@@ -11,8 +11,7 @@
 .ctntext{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-
+  gap:8px;
 }
 
 /*20230815 将摘要作为自定义 CSS*/
