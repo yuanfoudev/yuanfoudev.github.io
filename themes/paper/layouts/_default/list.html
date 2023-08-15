@@ -55,19 +55,22 @@
   {{ end }}
   
   <h2 class="!my-0 pb-1 font-bold !leading-none">{{ .Title }}</h2>
-
+  <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
   <!--20230814 为文章添加预览图片和摘要Article Summary -->
-  <div class="flex summarysimg">
+  <div class="summarysimg">
       <p class="small">{{ .Params.summarys }}</p>
+      {{ if .Params.featuredImage }}
+      <img class="rightimg" src="{{ .Params.featuredImage }}">
+      {{ end }}
   </div>
 
 
   <time class="text-sm antialiased opacity-60"
     >{{ .Date | time.Format ":date_medium" }}</time
   >
-  <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
+  
 </section>
-{{ end }}
+<!--{{ end }}-->
 
 <!-- Main Nav -->
 {{ if gt $paginator.TotalPages 1 }}
