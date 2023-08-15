@@ -21,9 +21,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 3; /* 设置最大行数 */  
+    margin-bottom: 0;
 }
 
 .rightimg{
+  margin: 0px;
   flex: 0 0 30%; /* 占据 30% 的宽度，不会扩展或收缩 */
   max-width: 30%; /* 设置最大宽度为 30% */
   max-height: 120px;
