@@ -30,6 +30,11 @@
   flex: 0 0 30%; /* 占据 30% 的宽度，不会扩展或收缩 */
   max-width: 30%; /* 设置最大宽度为 30% */
   max-height: 120px;
+  object-fit:cover;
   height: auto; /* 高度会根据宽度和图片比例自适应 */
   border-radius: 8px;
+}
+
+.articleimg{
+  object-fit:cover;
 }

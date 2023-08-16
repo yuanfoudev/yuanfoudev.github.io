@@ -18,12 +18,11 @@
       <span>{{ .Params.authors }}</span>
       {{ end }}
 
-      <!--20230814 插入文章图片-->
-     {{ if .Params.featuredImage }}
-     <img src="{{ .Params.featuredImage }}">
-     {{ end }}
-
     </div>
+      <!--20230816 移动插入文章图片位置-->
+      {{ if .Params.featuredImage }}
+      <img class="articleimg" src="{{ .Params.featuredImage }}">
+      {{ end }}
     {{ end }}
      
   </header>
