@@ -1,3 +1,4 @@
+#用于定义工程的名称、发生的分支以及定时触发、手动触发。
 name: CD
 
 on:
@@ -10,13 +11,13 @@ on:
   workflow_dispatch:
     
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# 设置GITHUB_TOKEN 的权限，允许 workflow 对 Github pages 进行部署。
 permissions:
   contents: write
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
+# 定义并发部署策略，避免多个 workflow 同时运行导致冲突。
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -35,11 +36,11 @@ jobs:
     env:
       CLOUDFLARE_PAGES_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
 
-    # 添加自己的Cloudflare部署钩子到 github 仓库   
+    # 添加自己的Cloudflare部署钩子到 github 仓库，并触发构建   
     steps:
       - name: Trigger Cloudflare Pages build
         if: startsWith(env.CLOUDFLARE_PAGES_DEPLOY_HOOK, 'https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/') && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
-        run: curl -X POST ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
+        run: curl -X POST "${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}"
 
   
       - uses: actions/checkout@v3
