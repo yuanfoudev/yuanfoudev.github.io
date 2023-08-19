@@ -33,7 +33,7 @@ theme = "paper"
 # 配置杂项misc
 disableHLJS = true
 math = true  
-
+enableEmoji = true  #配置 emoji
 
 
 
