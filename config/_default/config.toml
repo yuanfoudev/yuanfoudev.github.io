@@ -34,7 +34,7 @@ theme = "paper"
 disableHLJS = true
 math = true  
 enableEmoji = true  #配置 emoji
-
+ignoreFiles = ["exampleSite"] #忽略示例站点资源
 
 
 # 正确配置 markup 解析设置，防止原始 html标签 被过滤。
