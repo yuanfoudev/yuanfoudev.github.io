@@ -1,10 +1,11 @@
 /* Place custom css here. */
 
-/*20230815添加 维护list，添加缩略图类*/
+/*20230821添加 维护list，添加缩略图类，新增两端对齐*/
 .summarysctnbox{
     display: flex;
     flex-direction: row;
     align-items: flex-start; 
+    justify-content: space-between;
     gap: 24px;
     margin-bottom: 1em;
   }
