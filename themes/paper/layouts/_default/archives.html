@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+{{ range where .Pages "Type" "post" }}
+  {{ $year := .Date.Format "2006" }}
+  {{ $archive := site.GetPage "section" "archives" | index $year }}
+  {{ if not $archive }}
+    {{ $archive = (dict "Title" $year "Pages" (slice .)) }}
+    {{ with $.Site.Language }}
+      {{ $archive.Title = i18n $archive.Title }}
+    {{ end }}
+    {{ $archive | jsonify | partialCached "archivers/index.html" $year }}
+  {{ else }}
+    {{ $archive.Pages = $archive.Pages | append . }}
+  {{ end }}
+{{ end }}
