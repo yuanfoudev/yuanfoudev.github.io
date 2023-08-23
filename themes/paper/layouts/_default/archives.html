@@ -6,19 +6,27 @@
 
 {{ $archives := slice }}
 
+<!--查找除了类型为"extra"的文章-->
 {{ range where .Site.RegularPages "type" "!=" "extra" }}
   {{ $year := .Date.Format "2006" }}
   {{ $monthDay := .Date.Format "01-02" }}
+
+  {{ with index $archives $year }}
+    {{ $archives = $archives | add $year (dict "Months" ($archives.$year.Months | addDict $monthDay .Title)) }}
+  {{ else }}
+    {{ $archives = $archives | add $year (dict "Months" (dict $monthDay .Title)) }}
+  {{ end }}
+
 {{ end }}
 
 {{ range $year, $data := $archives }}
-  <h2>{{ $year }} ({{ $data.Count }})</h2>
+  <h2>{{ $year }}</h2>
   
   <ul>
     {{ range $monthDay, $title := $data.Months }}
       <li>
         <span class="mr-5">{{ $monthDay }}</span>
-        <a href="{{ .RelPermalink }}">{{ $title }}</a>
+        <a href="{{ index $title }}">{{ index $title }}</a>
       </li>
     {{ end }}
   </ul>
