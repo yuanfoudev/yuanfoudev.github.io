@@ -1,6 +1,8 @@
 {{ define "main" }}
 <!--标题-->
-<h1 class="!my-0 pb-2.5">{{ .Title }}</h1>
+<header class="mb-16">
+    <h1 class="!my-0 pb-2.5">{{ .Title }}</h1>
+</header>
 
 {{ $archives := slice }}
 
@@ -14,7 +16,7 @@
   <ul>
     {{ range $pages }}
       <li>
-        <div class="mr-5">{{.Date}} </div>
+        <span class="mr-5">{{.Date.Format "01-02"}}</span>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{ end }}
   </ul>
