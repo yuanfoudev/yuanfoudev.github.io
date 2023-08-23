@@ -1,18 +1,21 @@
 {{ define "main" }}
 <!--标题-->
-<h1>Archives</h1>
+<h1 class="!my-0 pb-2.5">{{ .Title }}</h1>
 
 {{ $archives := slice }}
 
-{{ range .Site.RegularPages.GroupByDate "2006" }}
-  {{ $year := .Key }}
+{{ range where .Site.RegularPages "type" "!=" "extra" }}
+  {{ $year := .Date.Format "2006" }}
   {{ $pages := .Pages }}
   
   <h2>{{ $year }}</h2>
   
+  <!--文章组-->
   <ul>
     {{ range $pages }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      <li>
+        <div class="mr-5">{{.Date}} </div>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{ end }}
   </ul>
   
