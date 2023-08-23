@@ -16,8 +16,8 @@
   <ul>
     {{ range .Pages }}
       <li class="archivesitem">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
         <div>{{ .Date.Format "01-02" }}</div>
-        <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
       </li>
     {{ end }}
   </ul>
