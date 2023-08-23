@@ -4,29 +4,17 @@
     <h1 class="!my-0 pb-2.5">{{ .Title }}</h1>
 </header>
 
-{{ $archives := slice }}
-
 <!--查找除了类型为"extra"的文章-->
-{{ range where .Site.RegularPages "type" "!=" "extra" }}
-  {{ $year := .Date.Format "2006" }}
-  {{ $monthDay := .Date.Format "01-02" }}
-
-  {{ with index $archives $year }}
-    {{ $archives = $archives | add $year (dict "Months" ($archives.$year.Months | addDict $monthDay .Title)) }}
-  {{ else }}
-    {{ $archives = $archives | add $year (dict "Months" (dict $monthDay .Title)) }}
-  {{ end }}
-
-{{ end }}
-
-{{ range $year, $data := $archives }}
+{{ $articles := where .Site.RegularPages.ByDate.Reverse "type" "!=" "extra" | range }}
+{{ $grouped := group $articles "2006" }}
+{{ range $year, $pages := $grouped }}
   <h2>{{ $year }}</h2>
   
   <ul>
-    {{ range $monthDay, $title := $data.Months }}
+    {{ range $pages }}
       <li>
-        <span class="mr-5">{{ $monthDay }}</span>
-        <a href="{{ index $title }}">{{ index $title }}</a>
+        <span class="mr-5">{{ .Date.Format "01-02" }}</span>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
       </li>
     {{ end }}
   </ul>
