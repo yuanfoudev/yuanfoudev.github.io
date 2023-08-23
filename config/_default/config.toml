@@ -97,5 +97,5 @@ ignoreFiles = ["exampleSite"] #忽略示例站点资源
   [[menu.main]]
     identifier = "archives"
     name = "Archives"
-    url = "//archives/_index.md"
+    url = "/archives/"
     weight = 10
