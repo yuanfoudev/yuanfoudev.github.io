@@ -99,3 +99,10 @@ ignoreFiles = ["exampleSite"] #忽略示例站点资源
     name = "Archives"
     url = "/archives/"
     weight = 10
+
+
+# 配置系列
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"

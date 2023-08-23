@@ -2,7 +2,6 @@
 title: "Friends"
 description: "This is a collection of friendly links for my blog."
 date: 2023-08-13
-aliases : ["Friends", "contact"]
 author : "元否"
 url: "/friends/"
 ---
