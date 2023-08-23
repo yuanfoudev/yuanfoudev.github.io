@@ -1,6 +1,6 @@
 ---
 title: "Friends"
-description: "Hugo, the world's fastest framework for building websites"
+description: "This is a collection of friendly links for my blog."
 date: 2023-08-13
 aliases : ["Friends", "contactabout"]
 author : "元否"

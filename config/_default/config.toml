@@ -94,8 +94,8 @@ ignoreFiles = ["exampleSite"] #忽略示例站点资源
     name = "Friends"
     url = "/friends/"
     weight = 10
-#  [[menu.main]]
-#    identifier = "archives"
-#    name = "Archives"
-#    url = "/archives/"
-#    weight = 10
+  [[menu.main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/archives/"
+    weight = 10
