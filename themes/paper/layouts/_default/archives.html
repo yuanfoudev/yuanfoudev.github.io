@@ -15,9 +15,9 @@
   <h2>{{ .Key }}</h2>
   <ul>
     {{ range .Pages }}
-      <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-        <span class="mr-5">{{ .Date.Format "01-02" }}</span>
+      <li class="archivesitem">
+        <div>{{ .Date.Format "01-02" }}</div>
+        <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
       </li>
     {{ end }}
   </ul>
