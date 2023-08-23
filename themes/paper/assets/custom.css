@@ -44,7 +44,4 @@
 /*2023023 新增 archives盒子*/
 .archivesitem{
   font-size: 1.2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }

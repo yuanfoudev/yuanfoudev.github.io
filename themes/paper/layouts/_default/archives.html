@@ -5,7 +5,8 @@
 </header>
 
 <!--查找除了类型为"extra"的文章-->
-{{ $articles := where .Site.RegularPages.ByDate.Reverse "type" "!=" "extra" }}
+{{ $articles := where .RegularPages.ByDate.Reverse "type" "!=" "extra" }}
+
 <!-- 获取所有文章的年份列表 -->
 
 {{ $pagesgroup := $articles.GroupByDate "2006"}}
@@ -16,8 +17,8 @@
   <ul>
     {{ range .Pages }}
       <li class="archivesitem">
+        <span class="mr-5">{{ .Date.Format "01-02" }}</span>
         <a href="{{ .Permalink }}">{{ .Title }}</a>
-        <div>{{ .Date.Format "01-02" }}</div>
       </li>
     {{ end }}
   </ul>
