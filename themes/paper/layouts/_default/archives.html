@@ -1,15 +1,22 @@
 {{ define "main" }}
+<!--标题-->
+<h1>Archives</h1>
 
-{{ range where .Pages "Type" "post" }}
-  {{ $year := .Date.Format "2006" }}
-  {{ $archive := site.GetPage "section" "archives" | index $year }}
-  {{ if not $archive }}
-    {{ $archive = (dict "Title" $year "Pages" (slice .)) }}
+{{ $archives := slice }}
+
+{{ range .Site.RegularPages.GroupByDate "2006" }}
+  {{ $year := .Key }}
+  {{ $pages := .Pages }}
+  
+  <h2>{{ $year }}</h2>
+  
+  <ul>
+    {{ range $pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{ end }}
-    {{ $archive | jsonify | partialCached "archivers/index.html" $year }}
-  {{ else }}
-    {{ $archive.Pages = $archive.Pages | append . }}
-  {{ end }}
+  </ul>
+  
+  {{ $archives = $archives | append (dict "Year" $year "Pages" $pages) }}
 {{ end }}
 
 {{ end }}
