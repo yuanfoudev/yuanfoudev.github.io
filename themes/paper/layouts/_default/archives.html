@@ -8,7 +8,7 @@
 {{ $articles := where .Site.RegularPages.ByDate.Reverse "type" "!=" "extra" }}
 <!-- 获取所有文章的年份列表 -->
 
-{{ $pagesgroup := range $articles.GroupByDate "2006"}}
+{{ $pagesgroup := $articles.GroupByDate "2006"}}
 
 {{ range $pagesgroup }}
 <!-- 按年份分组文章 -->
