@@ -7,28 +7,23 @@
 <!--查找除了类型为"extra"的文章-->
 {{ $articles := where .Site.RegularPages.ByDate.Reverse "type" "!=" "extra" }}
 <!-- 获取所有文章的年份列表 -->
-{{ $years := slice }}
-{{ range $articles }}
-    {{ $year := .Date.Format "2006" }}
-    {{ $years = $years | append $year }}
-{{ end }}
-{{ $years = $years | uniq }}
 
+{{ $pagesgroup := range $articles.GroupByDate "2006"}}
+
+{{ range $pagesgroup }}
 <!-- 按年份分组文章 -->
-{{ range $years }}
-  <h2>{{ . }}</h2>
-  
+  <h2>{{ .Key }}</h2>
   <ul>
-    {{ $year := . }}
-    {{ $pages := where $articles (printf "eq .Date.Year %s" $year) }}
-    {{ range $pages }}
+    {{ range .Pages }}
       <li>
-        <span class="mr-5">{{ .Date.Format "01-02" }}</span>
         <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <span class="mr-5">{{ .Date.Format "01-02" }}</span>
       </li>
     {{ end }}
   </ul>
 {{ end }}
+
+
 
 
 <!--配合define "main"-->
