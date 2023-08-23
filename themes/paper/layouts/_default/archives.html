@@ -5,7 +5,7 @@
 </header>
 
 <!--查找除了类型为"extra"的文章-->
-{{ $articles := where .RegularPages.ByDate.Reverse "type" "!=" "extra" }}
+{{ $articles := where .Site.RegularPages.ByDate.Reverse ".Params.type" "!=" "extra" }}
 
 <!-- 获取所有文章的年份列表 -->
 
