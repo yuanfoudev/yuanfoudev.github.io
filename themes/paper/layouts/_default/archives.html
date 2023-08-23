@@ -20,7 +20,7 @@
   
   <ul>
     {{ $year := . }}
-    {{ $pages := where $articles (printf "eq \"%s\" (.Date.Format \"2006\")" $year) }}
+    {{ $pages := where $articles (printf "eq .Date.Year %s" $year) }}
     {{ range $pages }}
       <li>
         <span class="mr-5">{{ .Date.Format "01-02" }}</span>
