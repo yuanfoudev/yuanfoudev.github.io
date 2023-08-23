@@ -9,13 +9,6 @@
 {{ range where .Site.RegularPages "type" "!=" "extra" }}
   {{ $year := .Date.Format "2006" }}
   {{ $monthDay := .Date.Format "01-02" }}
-  
-  {{ with index $archives $year }}
-    {{ $archives = $archives | addDict $year (dict "Count" (add (index $archives $year).Count 1) "Months" (dict $monthDay .Title)) }}
-  {{ else }}
-    {{ $archives = $archives | addDict $year (dict "Count" 1 "Months" (dict $monthDay .Title)) }}
-  {{ end }}
-  
 {{ end }}
 
 {{ range $year, $data := $archives }}
@@ -25,7 +18,7 @@
     {{ range $monthDay, $title := $data.Months }}
       <li>
         <span class="mr-5">{{ $monthDay }}</span>
-        <a href="{{ index . $year }}">{{ $title }}</a>
+        <a href="{{ .RelPermalink }}">{{ $title }}</a>
       </li>
     {{ end }}
   </ul>
