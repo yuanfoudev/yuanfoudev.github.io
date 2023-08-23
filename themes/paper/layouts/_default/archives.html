@@ -5,8 +5,6 @@
   {{ $archive := site.GetPage "section" "archives" | index $year }}
   {{ if not $archive }}
     {{ $archive = (dict "Title" $year "Pages" (slice .)) }}
-    {{ with $.Site.Language }}
-      {{ $archive.Title = i18n $archive.Title }}
     {{ end }}
     {{ $archive | jsonify | partialCached "archivers/index.html" $year }}
   {{ else }}
