@@ -8,20 +8,27 @@
 
 {{ range where .Site.RegularPages "type" "!=" "extra" }}
   {{ $year := .Date.Format "2006" }}
-  {{ $pages := .Pages }}
+  {{ $monthDay := .Date.Format "01-02" }}
   
-  <h2>{{ $year }}</h2>
+  {{ with index $archives $year }}
+    {{ $archives = $archives | addDict $year (dict "Count" (add (index $archives $year).Count 1) "Months" (dict $monthDay .Title)) }}
+  {{ else }}
+    {{ $archives = $archives | addDict $year (dict "Count" 1 "Months" (dict $monthDay .Title)) }}
+  {{ end }}
   
-  <!--文章组-->
+{{ end }}
+
+{{ range $year, $data := $archives }}
+  <h2>{{ $year }} ({{ $data.Count }})</h2>
+  
   <ul>
-    {{ range $pages }}
+    {{ range $monthDay, $title := $data.Months }}
       <li>
-        <span class="mr-5">{{.Date.Format "01-02"}}</span>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <span class="mr-5">{{ $monthDay }}</span>
+        <a href="{{ index . $year }}">{{ $title }}</a>
+      </li>
     {{ end }}
   </ul>
-  
-  {{ $archives = $archives | append (dict "Year" $year "Pages" $pages) }}
 {{ end }}
 
 {{ end }}
