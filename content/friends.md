@@ -10,4 +10,4 @@ type: "extra"
 > 别独自用餐。
 
 - 特立独行的异类：[https://www.demochen.com/](https://www.demochen.com/)
-- 大为教练：[https://pacai.live/](https://pacai.live/)
+- 大魏教练：[https://pacai.live/](https://pacai.live/)
