@@ -34,7 +34,7 @@
   max-width: 30%; /* 设置最大宽度为 30% */
   height: 120px;
   object-fit:cover;
-  border-radius: 16px; /* 更新圆角为 16px */
+  border-radius: 12px;
 }
 
 .articleimg{
