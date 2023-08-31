@@ -5,7 +5,7 @@ languageCode = "en"
 
 author = "yuanfou"
 DefaultContentLanguage = "zh"
-paginate = 20
+paginate = 10   #20230831 Control the number of pages per pagination
 ignoreErrors = ["error-remote-getjson"]
 enableInlineShortcodes = true
 
