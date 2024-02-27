@@ -11,3 +11,4 @@ type: "extra"
 
 - 特立独行的异类：[https://www.demochen.com/](https://www.demochen.com/)
 - 大魏教练：[https://pacai.live/](https://pacai.live/)
+- 王帅真： [qizong007.top](qizong007.top)
