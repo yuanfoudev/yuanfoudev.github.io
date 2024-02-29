@@ -12,7 +12,7 @@ enableInlineShortcodes = true
 # ------------------------------
 
 
-title = "元否的工作坊"
+title = "元否"
 theme = "paper"
 
 
@@ -26,7 +26,7 @@ theme = "paper"
 
   avatar = 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd6e23f4c-91f8-4665-8e2e-15eb24476d61%2Flogo.png?table=block&id=991a6272-a390-4ec7-8b93-1feb08e5054d&spaceId=6f061d15-8f2e-42d0-a148-068fb412b305&width=600&userId=5191ad45-3310-4476-a47f-6c90dded5c8a&cache=v2'
   name = '元否'
-  bio = '未独立开发者|INTJ-A'
+  bio = '未独立开发者|INFJ-A 欢迎来到我的博客'
 
 # ------------------------------
 
@@ -86,19 +86,24 @@ ignoreFiles = ["exampleSite"] #忽略示例站点资源
 [menu]
   [[menu.main]]
     identifier = "about"
-    name = "About"
+    name = "关于"
     url = "/about/"
     weight = 10
   [[menu.main]]
     identifier = "friends"
-    name = "Friends"
+    name = "友链"
     url = "/friends/"
     weight = 10
   [[menu.main]]
     identifier = "archives"
-    name = "Archives"
+    name = "归档"
     url = "/archives/"
     weight = 10
+  [[menu.main]]
+    identifier = "webtools"
+    name = "工具箱"
+    url = "/webtools/"
+    weight = 9
 
 
 # 配置系列
