@@ -88,22 +88,18 @@ ignoreFiles = ["exampleSite"] #忽略示例站点资源
     identifier = "about"
     name = "关于"
     url = "/about/"
-    weight = 10
+    weight = 8
   [[menu.main]]
     identifier = "friends"
     name = "友链"
     url = "/friends/"
-    weight = 10
+    weight = 9
   [[menu.main]]
     identifier = "archives"
     name = "归档"
     url = "/archives/"
     weight = 10
-  [[menu.main]]
-    identifier = "webtools"
-    name = "工具箱"
-    url = "/webtools/"
-    weight = 9
+
 
 
 # 配置系列
